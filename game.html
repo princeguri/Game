@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="game.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>game</title>
+</head>
+<style>
+    /* body{
+    background-color: antiquewhite;
+    display: flex;
+    justify-content: center;
+    }
+    #box{
+        height: 400px;
+        width: 300px;
+        background-color: aqua;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #inputbox{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+    }
+    input{
+        cursor: pointer;
+    } */
+</style>
+<body>
+    <div id="box">
+        <div id="inputbox">
+            <p>gusse number</p>
+            <input id="input" type="number">
+            <button id="button" type="button">sumbit</button>
+        </div>
+        <div>
+            <p id="privious">privious gusse: <span id="span"></span></p>
+            <p id="remainin-ggusse">remaining gusse: <span id="res">10</span></p>
+            <h1 id="emty"></h1>
+            <h1 id="h1"></h1>
+        </div>
+    </div>
+    <script>
+        const b=parseInt(Math.random()*100+1)
+        const remain=document.getElementById('res');
+        let num=1;
+            console.log(b);
+           
+        document.getElementById("button").addEventListener("click",function(e) {
+            
+            let a=parseInt((document.getElementById("input")).value)
+            // document.getElementById('input').value='';
+            if(a=== ""){
+            alert("enter your lucky  number")
+            }else if (a<1) {
+                alert("enter your lucky  number MORE THEN ONE") 
+            }else if(isNaN(a)){
+                alert('enter a valid number');
+            }else if (a>100) {
+                alert('less then 100')
+            }else {
+                if(a===b){
+                    // alert('same');
+                    emty.textContent=`you are right  ${b}`
+                }else if(a>b){
+                    // alert('number is big')
+                    emty.textContent="number is big"
+
+                }else if(a<b){
+                    // alert('number is small')
+                    emty.textContent="number is small"
+                }
+            };
+            if(num===11){
+                // alert(`game is over ${b}`);
+                h1.innerHTML= "game is over"+b;
+                document.getElementById('input').setAttribute('disabled','disbaled')
+                document.getElementById('button').setAttribute('disabled','disbaled')
+                emty.textContent=""
+                
+            } 
+            span.textContent+=a+",";
+            num++;
+            remain.innerHTML=`${11-num}`;
+            // if(num === 11){
+                
+                
+            // }
+            // a="";
+            
+        });
+           
+
+     
+     
+     
+    </script>
+</body>
+</html>
